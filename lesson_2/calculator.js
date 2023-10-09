@@ -83,6 +83,7 @@ function displayResult () {
   prompt(`${msg[userLanguage]['result']} ${calculationResult(userNumber1, userNumber2, userOperation)}`);
 }
 
+
 function displayCalculator () {
   while (true) {
     prompt(msg[userLanguage]['welcome']);
