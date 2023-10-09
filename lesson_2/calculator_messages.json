@@ -1,11 +1,47 @@
 {
-  "num1" : "What's the first number?",
-  "num2" : "What's the second number?",
-  "invalidNum" : "Hmm... that doesn't look like a valid number.",
-  "operation" : "What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide",
-  "invalidOperation" : "Must choose 1, 2, 3 or 4",
-  "welcome" : "Welcome to Calculator!",
-  "playAgain" : "Would you like to perform another calculation?\n Enter 'y' for yes or 'n' for no: ",
-  "invalidPlayAgain" : "Please enter 'y' or 'n': ",
-  "goodbye" : "Thank you for using Calculator. Goodbye!"
+  "en" : {
+    "language" : "Choose your language: type 'en' for English",
+    "invalidLanguage" : "Sorry, please enter 'en' for English:",
+    "num1" : "What's the first number?",
+    "num2" : "What's the second number?",
+    "invalidNum" : "Hmm... that doesn't look like a valid number.",
+    "operation" : "What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide",
+    "invalidOperation" : "Must choose 1, 2, 3 or 4",
+    "welcome" : "Welcome to Calculator!",
+    "result" : "The result is:",
+    "playAgain" : "Would you like to perform another calculation?\n Enter '1' for yes or '0' for no: ",
+    "invalidPlayAgain" : "Please enter '1' for yes or '0' for no: ",
+    "goodbye" : "Thank you for using Calculator. Goodbye!",
+    "divideByZero" : "This Calculator cannot divide by zero. Please choose a new operation."
+  },
+  "es" : {
+    "language" : "Elija su idioma: escriba 'es' para español",
+    "invalidLanguage" : "Perdón, introduzca 'es' para español:",
+    "num1" : "¿Cuál es el primer número?",
+    "num2" : "¿Cuál es el segundo número?",
+    "invalidNum" : "Hmm... eso no parece un número válido.",
+    "operation" : "¿Qué operación desea realizar? 1) Sumar 2) Restar 3) Multiplicar 4) Dividir",
+    "invalidOperation" : "Debe elegir 1, 2, 3 ó 4",
+    "welcome" : "¡Bienvenido a Calculator!",
+    "result" : "El resultado es:",
+    "playAgain" : "¿Desea realizar otro cálculo? Introduzca '1' para sí o '0' para no:",
+    "invalidPlayAgain" : "Introduzca '1' para sí o '0' para no: ",
+    "goodbye" : "Gracias por usar la Calculadora. ¡Adiós!",
+    "divideByZero" : "Esta Calculadora no puede dividir por cero. Por favor, elija una nueva operación."
+  },
+  "fr" : {
+    "language" : "Choisissez votre langue : tapez 'fr' pour le français",
+    "invalidLanguage" : "Désolé, veuillez saisir 'fr' pour le français:",
+    "num1" : "Quel est le premier chiffre ?",
+    "num2" : "Quel est le deuxième chiffre ?",
+    "invalidNum" : "Hmm... cela ne semble pas être un chiffre valable.",
+    "operation" : "Quelle opération voulez-vous effectuer ? 1) Addition 2) Soustraction 3) Multiplication 4) Division",
+    "invalidOperation" : "Vous devez choisir 1, 2, 3 ou 4",
+    "welcome" : "Bienvenue à Calculator !",
+    "result" : "Le résultat est le suivant: ",
+    "playAgain" : "Souhaitez-vous effectuer un autre calcul ? Saisissez '1' pour oui ou '0' pour non :",
+    "invalidPlayAgain" : "Saisissez '1' pour oui ou '0' pour non :",
+    "goodbye" : "Merci d'avoir utilisé la calculatrice. Au revoir !",
+    "divideByZero" : "Cette calculatrice ne peut pas diviser par zéro. Veuillez choisir une nouvelle opération."
+  }
 }
