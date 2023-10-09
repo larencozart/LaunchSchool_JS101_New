@@ -75,9 +75,12 @@ function displayResult () {
   let userNumber1 = getNumber1();
   let userNumber2 = getNumber2();
   let userOperation = getOperation();
-  while (userNumber2 === '0' && userOperation === '4') {
+  let divisionByZero = userNumber2 === '0' && userOperation === '4';
+
+  while (divisionByZero) {
     prompt(msg[userLanguage]['divideByZero']);
     userOperation = getOperation();
+    divisionByZero = userNumber2 === '0' && userOperation === '4';
   }
 
   prompt(`${msg[userLanguage]['result']} ${calculationResult(userNumber1, userNumber2, userOperation)}`);
