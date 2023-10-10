@@ -6,57 +6,82 @@ const PERCENTAGE_TO_DECIMAL = 100;
 const prompt = (message1, message2 = '') => {
   console.log(`> ${msg[message1]}${message2}`);
 };
-const getLoanAmount = () => {
-  // FIX NUMBER CONVERSION ISSUE
-  prompt('loanAmount');
-  let loanAmount = Number(rls.question());
-  while (Number.isNaN(loanAmount) || loanAmount <= 0) {
-    prompt('invalidLoanAmount');
-    loanAmount = Number(rls.question());
-  }
-  return loanAmount;
+
+const isInvalidNumber = (number) => {
+  // an elegant solution that I struggled to create on my own!
+  // I refactored my code to use this lovely function from LS code.
+  return number.trim() === '' ||
+         Number(number) < 0   ||
+         Number.isNaN(Number(number));
 };
-const getLoanDuration = () => {
+
+const getLoanAmount = () => {
+  prompt('loanAmount');
+  let loanAmount = rls.question();
+  while (isInvalidNumber(loanAmount)) {
+    prompt('invalidLoanAmount');
+    loanAmount = rls.question();
+  }
+  return Number(loanAmount);
+};
+
+const getYearOrMonths = () => {
   prompt('yearsOrMonths');
   let yearsOrMonths = rls.question();
   while (!['y', 'm'].includes(yearsOrMonths)) {
     prompt('invalidYearsOrMonths');
     yearsOrMonths = rls.question();
   }
+  return yearsOrMonths;
+};
 
+const getLoanDuration = () => {
   prompt('loanDuration');
-  let loanDuration = Number(rls.question());
-  while (Number.isNaN(loanDuration) || loanDuration <= 0) {
+  let loanDuration = rls.question();
+  while (isInvalidNumber(loanDuration) || loanDuration === '0') {
     prompt('invalidLoanDuration');
-    loanDuration = Number(rls.question());
+    loanDuration = rls.question();
   }
-  if (yearsOrMonths === 'y') {
-    return loanDuration * MONTHS_IN_A_YEAR;
-  } else {
-    return loanDuration;
-  }
+  return Number(loanDuration);
 };
+
 const getAPR = () => {
-  // CHECK EMPTY STRING SOMEHOW
   prompt('APR');
-  let apr = Number(rls.question());
-  while (Number.isNaN(apr) || apr < 0) {
+  let apr = rls.question();
+  while (isInvalidNumber(apr)) {
     prompt('invalidAPR');
-    apr = Number(rls.question());
+    apr = rls.question();
   }
-  let aprDecimal = apr / PERCENTAGE_TO_DECIMAL;
-  return aprDecimal;
+  return Number(apr);
 };
-const getMonthlyPayment = () => {
-  let monthlyPayment;
 
+const calculateLoanDurationInMonths = () => {
+  let yearsOrMonths = getYearOrMonths();
+  if (yearsOrMonths === 'y') {
+    return getLoanDuration() * 12;
+  } else {
+    return getLoanDuration();
+  }
+};
+
+const calculateAprDecimal = () => {
+  return getAPR() / PERCENTAGE_TO_DECIMAL;
+};
+
+const calculateMonthlyIntRate = () => {
+  return calculateAprDecimal() / MONTHS_IN_A_YEAR;
+};
+
+const calculateMonthlyPayment = () => {
   let loanAmount = getLoanAmount();
-  let loanDurationInMonths = getLoanDuration();
-  let aprDecimal = getAPR();
-  let monthlyIntRate = aprDecimal / MONTHS_IN_A_YEAR;
+  let loanDurationInMonths = calculateLoanDurationInMonths();
+  let monthlyIntRate = calculateMonthlyIntRate();
 
-  if (aprDecimal === 0) {
+  let monthlyPayment;
+  // No-Interest Loan Calculation
+  if (monthlyIntRate === 0) {
     monthlyPayment = loanAmount / loanDurationInMonths;
+  // Interest Loan Calculation
   } else {
     monthlyPayment = loanAmount *
      (monthlyIntRate /
@@ -65,11 +90,11 @@ const getMonthlyPayment = () => {
 
   return monthlyPayment.toFixed(2);
 };
+
 const displayLoanCalculator = () => {
   while (true) {
     prompt('welcome');
-    let monthlyPayment = `$${getMonthlyPayment()}`;
-    prompt('monthlyPayment', monthlyPayment);
+    prompt('monthlyPayment', `$${calculateMonthlyPayment()}`);
 
     prompt('useAgain');
     let useAgain = rls.question();
