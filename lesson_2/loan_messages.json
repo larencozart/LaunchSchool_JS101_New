@@ -1,0 +1,15 @@
+{
+  "loanAmount" : "Enter your loan amount (without commas or dollar signs): ",
+  "invalidLoanAmount" : "Please enter a (positive) number (greater than 0) for your loan amount (without extra characters): ",
+  "loanDuration" : "Enter your loan duration: ",
+  "invalidLoanDuration" : "Please enter a number (greater than 0) for your loan duration: ",
+  "yearsOrMonths" : "Is your loan duration in (y)ears or (m)onths?",
+  "invalidYearsOrMonths" : "Please enter 'y' for years or 'm' for months:",
+  "APR" : "Enter your Annual Percentage Rate (APR):\n> For example, if your APR is 5%, please enter '5': ",
+  "invalidAPR" : "Please only enter a (postive) number for your APR (Example: 6.5% -> 6.5): ",
+  "welcome" : "Welcome to the Loan Calculator!\n> Here, you can calculate the monthly payment of any loan you have.\n> Let's get started!",
+  "monthlyPayment" : "The monthly payment on your loan is ",
+  "useAgain" : "Would you like to calculate another monthly loan payment?\n> Enter 'y' for yes or 'n' for no: ",
+  "invalidUseAgain" : "Please enter 'y' to use again or 'n' to exit: ",
+  "goodbye" : "Thank you for using the Loan Calculator. Come again!"
+}
