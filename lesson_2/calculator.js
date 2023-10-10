@@ -5,6 +5,7 @@ const userLanguage = getLanguage();
 function prompt(message) {
   console.log(`=> ${message}`);
 }
+
 function getLanguage () {
   prompt(msg.en.language);
   prompt(msg.es.language);
@@ -19,6 +20,7 @@ function getLanguage () {
   }
   return language;
 }
+
 function invalidNumber(number) {
   return number.trimStart() === '' || Number.isNaN(Number(number));
 }
@@ -33,6 +35,7 @@ let getNumber1 = () => {
   }
   return number1;
 };
+
 let getNumber2 = () => {
   prompt(msg[userLanguage]['num2']);
   let number2 = readline.question();
@@ -43,6 +46,7 @@ let getNumber2 = () => {
   }
   return number2;
 };
+
 let getOperation = () => {
   prompt(msg[userLanguage]['operation']);
   let operation = readline.question();
@@ -53,6 +57,7 @@ let getOperation = () => {
   }
   return operation;
 };
+
 let calculationResult = (number1, number2, operation) => {
   let output;
   switch (operation) {
@@ -71,6 +76,7 @@ let calculationResult = (number1, number2, operation) => {
   }
   return output;
 };
+
 function displayResult () {
   let userNumber1 = getNumber1();
   let userNumber2 = getNumber2();
@@ -85,7 +91,6 @@ function displayResult () {
 
   prompt(`${msg[userLanguage]['result']} ${calculationResult(userNumber1, userNumber2, userOperation)}`);
 }
-
 
 function displayCalculator () {
   while (true) {
@@ -103,6 +108,7 @@ function displayCalculator () {
       prompt(msg[userLanguage]['goodbye']);
       break;
     } else {
+      console.clear();
       continue;
     }
   }
