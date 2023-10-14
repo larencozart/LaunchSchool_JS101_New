@@ -1,0 +1,6 @@
+{
+  "rounds" : "Would you like to play for BEST OF 3 rounds or BEST OF 5 rounds?\n> Enter 3 or 5: ",
+  "invalidRounds" : "Please enter 3 or 5:",
+  "userChoice" : "Choose: (r)ock, (p)aper, (sc)issors, (l)izard, or (sp)ock: ",
+  "invalidUserChoice" : "Please enter the move or abbreviation in parentheses of your choice."
+}
