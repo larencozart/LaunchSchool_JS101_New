@@ -104,33 +104,60 @@ function displayCurrentScore (scores) {
   console.log(`SCORE----- You: ${scores.user}, Computer: ${scores.computer}, Ties: ${scores.tie}\n`);
 }
 
-function displayWinnerMessage () {}
+function playRound (scores) {
+  let userChoice = getUserChoice();
+  let computerChoice = getComputerChoice();
+  let roundWinner = findRoundWinner(userChoice, computerChoice);
 
-// game logic to be broken into smaller components later
+  updateScore(scores, roundWinner);
+  displayChosenMoves(userChoice, computerChoice);
+  displayCurrentScore(scores);
+}
+
+function displayWinnerMessage (scores) {
+  if (scores.user === 3) {
+    console.log('\n' + msg['userWins']);
+  } else if (scores.computer === 3) {
+    console.log('\n' + msg['computerWins']);
+  }
+}
+
 function playGame () {
   const WINNING_SCORE = 3;
   let currentScores = { user : 0, computer : 0, tie : 0 };
 
   while (!isGameWon(currentScores, WINNING_SCORE)) {
-    let userChoice = getUserChoice();
-    let computerChoice = getComputerChoice();
-    let roundWinner = findRoundWinner(userChoice, computerChoice);
-
-    updateScore(currentScores, roundWinner);
-
-    displayChosenMoves(userChoice, computerChoice);
-    displayCurrentScore(currentScores);
+    playRound(currentScores);
   }
 
-  
-
-  // DISPLAY winner message
-  if (currentScores.user === 3) return 'user';
-  else if (currentScores.computer === 3) return 'computer';
-  // GET playAgain *
-  // DISPLAY goodbye
-
+  displayWinnerMessage(currentScores);
 }
 
-playEntireGame();
+function playAgain () {
+  prompt(msg['playAgain']);
+  let response = rls.question().toLowerCase();
 
+  while (!['yes', 'y', 'no', 'n'].includes(response)) {
+    prompt(msg['invalidPlayAgain']);
+    prompt(msg['playAgain']);
+    response = rls.question().toLowerCase();
+  }
+
+  return response[0] === 'y';
+}
+
+function runGameEngine () {
+  while (true) {
+    console.clear();
+    prompt(msg['welcome']);
+    prompt(msg['rules']);
+    playGame();
+
+    if (playAgain()) continue;
+    else break;
+  }
+
+  prompt(msg['goodbye']);
+}
+
+runGameEngine();

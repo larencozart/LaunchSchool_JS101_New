@@ -1,10 +1,11 @@
 {
-  "welcome": "Welcome! Let's play  Rock, Paper, Scissor, Lizard, Spock!",
-  "rules": "The Rules:\n   Scissors cuts paper and decapitates lizard.\n   Paper covers rock and disproves Spock.\n   Rock smashes scissors and crushes lizard\n   Lizard eats paper and poisons Spock\n   Spock vaporizes rock and destroys scissors",
-  "rounds" : "The best score out of 5 rounds wins (ties not included)!",
-  "invalidRounds" : "Please enter 3 or 5:",
+  "welcome": "Welcome! Let's play  Rock, Paper, Scissors, Lizard, Spock!\n",
+  "rules": "The Rules:\n1) SCISSORS cuts paper and decapitates lizard.\n2) PAPER covers rock and disproves Spock.\n3) ROCK smashes scissors and crushes lizard\n4) LIZARD eats paper and poisons Spock\n5) SPOCK vaporizes rock and destroys scissors\n\n** The first player to win 3 rounds wins the game! **\n",
   "getUserChoice" : "Choose: (r)ock, (p)aper, (sc)issors, (l)izard, or (sp)ock: ",
   "invalidUserChoice" : "Please enter the move or abbreviation in parentheses of your choice.",
-  "moves" : "MOVES",
-  "score" : "SCORE__"
+  "userWins" : "GAME OVER- YOU WON! Congratulations!\n",
+  "computerWins" : "GAME OVER- You lost. Better luck next time!\n",
+  "playAgain" : "Would you like to play again? Enter (y)es or (n)o: ",
+  "invalidPlayAgain" : "Please enter the choice or abbreviation in parentheses of your choice: ",
+  "goodbye" : "Thanks for playing Rock, Paper, Scissor, Lizard, Spock! See you later!"
 }
