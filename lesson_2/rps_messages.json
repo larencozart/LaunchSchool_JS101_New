@@ -5,6 +5,6 @@
   "invalidRounds" : "Please enter 3 or 5:",
   "getUserChoice" : "Choose: (r)ock, (p)aper, (sc)issors, (l)izard, or (sp)ock: ",
   "invalidUserChoice" : "Please enter the move or abbreviation in parentheses of your choice.",
-  "moves" : "__MOVES__",
-  "score" : "__SCORE__"
+  "moves" : "MOVES",
+  "score" : "SCORE__"
 }
