@@ -1,6 +1,10 @@
 {
-  "rounds" : "Would you like to play for BEST OF 3 rounds or BEST OF 5 rounds?\n> Enter 3 or 5: ",
+  "welcome": "Welcome! Let's play  Rock, Paper, Scissor, Lizard, Spock!",
+  "rules": "The Rules:\n   Scissors cuts paper and decapitates lizard.\n   Paper covers rock and disproves Spock.\n   Rock smashes scissors and crushes lizard\n   Lizard eats paper and poisons Spock\n   Spock vaporizes rock and destroys scissors",
+  "rounds" : "The best score out of 5 rounds wins (ties not included)!",
   "invalidRounds" : "Please enter 3 or 5:",
-  "userChoice" : "Choose: (r)ock, (p)aper, (sc)issors, (l)izard, or (sp)ock: ",
-  "invalidUserChoice" : "Please enter the move or abbreviation in parentheses of your choice."
+  "getUserChoice" : "Choose: (r)ock, (p)aper, (sc)issors, (l)izard, or (sp)ock: ",
+  "invalidUserChoice" : "Please enter the move or abbreviation in parentheses of your choice.",
+  "moves" : "__MOVES__",
+  "score" : "__SCORE__"
 }

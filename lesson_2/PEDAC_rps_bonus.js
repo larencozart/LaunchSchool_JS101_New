@@ -65,14 +65,14 @@ LOW-LEVEL:
     - RETURN 'user', 'computer', or 'tie'
 
 - FUNC update current score from current round winner
-  - SET var 'userScore' to 0;
-  - SET var 'computerScore' to 0;
-  - IF roundWinner = 'use' => increment 'userScore'
+  - SET parameter 'userScore' to 0;
+  - SET parameter 'computerScore' to 0;
+  - IF roundWinner = 'user' => increment 'userScore'
   - ELSE IF roundWinner = 'computer' => increment 'computerScore'
   - RETURN {"userScore" : userscore,
             "computerScore" : computerscore} // object?
 
-- FUNC display a rps game round
+- FUNC display a rps round
   - GET user choice *
   - GET computer choice *
   - GET round winner *
@@ -85,21 +85,21 @@ LOW-LEVEL:
   - LOOP to validate input
   - return true or false
 
-- FUNC display game
-  - LOOP while true
-      - CLEAR console
-      - PRINT welcome
-      - PRINT rules
-      - SET var 'winningscore' = FUNC get user amount of rounds;
-      - FUNC display rounds
-      - IF FUNC 'score' obj.userscore is 'winningscore'
-          => PRINT winner
-      - ELSE IF FUNCT 'score' obj.computerscore is 'winningscore'
-          => PRINT losing message
-      - IF FUNC exit game is true
-        => BREAK from loop
+SET const variable 'winning score' to 3
+  const WINNING_SCORE = 3;
+SET variable 'score' to object with properties of user/computer/tie
+     and the initial score of 0
 
-  - PRINT goodbye
+WHILE (condition is true) **
+    SET var to user input (getUserChoice())
+    SET var to computer input (getCompuerChoice())
+    SET var to round winner (findRoundWinner())
+    UPDATE score object **
+      if roundwinner is 'user' => update score of user by 1
+      else if roundwinner is computer => update score of computer by 1
+      else if roundwinner is tie => update tie score by 1
+    DISPLAY player choices & current score **
+    CHECK loop stopping condition (either player having score of 3) **
 
 
 */
