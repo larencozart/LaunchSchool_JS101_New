@@ -18,11 +18,11 @@ const isInvalidNumber = (number) => {
 const getLoanAmount = () => {
   prompt('loanAmount');
   let loanAmount = rls.question();
-  while (isInvalidNumber(loanAmount)) {
+  while (isInvalidNumber(loanAmount) || Number(loanAmount) === 0) {
     prompt('invalidLoanAmount');
     loanAmount = rls.question();
   }
-  return Number(loanAmount);
+  return Number(loanAmount).toFixed(2);
 };
 
 const getYearOrMonths = () => {
@@ -38,7 +38,7 @@ const getYearOrMonths = () => {
 const getLoanDuration = () => {
   prompt('loanDuration');
   let loanDuration = rls.question();
-  while (isInvalidNumber(loanDuration) || loanDuration === '0') {
+  while (isInvalidNumber(loanDuration) || parseInt(loanDuration, 2) === 0) {
     prompt('invalidLoanDuration');
     loanDuration = rls.question();
   }
@@ -93,14 +93,15 @@ const calculateMonthlyPayment = () => {
 
 const displayLoanCalculator = () => {
   while (true) {
+    console.clear();
     prompt('welcome');
     prompt('monthlyPayment', `$${calculateMonthlyPayment()}`);
 
     prompt('useAgain');
-    let useAgain = rls.question();
+    let useAgain = rls.question().toLowerCase();
     while (!['y', 'n'].includes(useAgain)) {
       prompt('invalidUseAgain');
-      useAgain = rls.question();
+      useAgain = rls.question().toLowerCase();
     }
     if (useAgain === 'n') {
       prompt('goodbye');
