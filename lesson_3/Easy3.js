@@ -77,6 +77,8 @@ console.log(arr1);
 //  does not explicitly use either true or false?
 
 // Try to come up with at least two different solutions.
-function isColorValid(color) {
-  return color === "blue" || color === "green";
+function isColorValid1(color) {
+  return (color === "blue" || color === "green");
 }
+
+let isColorValid2 = (color) => color === "blue" || color === "green";
