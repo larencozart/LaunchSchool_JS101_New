@@ -114,10 +114,10 @@ function playRound (scores) {
   displayCurrentScore(scores);
 }
 
-function displayWinnerMessage (scores) {
-  if (scores.user === 3) {
+function displayWinnerMessage (scores, winCondition) {
+  if (scores.user === winCondition) {
     console.log('\n' + msg['userWins']);
-  } else if (scores.computer === 3) {
+  } else if (scores.computer === winCondition) {
     console.log('\n' + msg['computerWins']);
   }
 }
@@ -130,7 +130,7 @@ function playGame () {
     playRound(currentScores);
   }
 
-  displayWinnerMessage(currentScores);
+  displayWinnerMessage(currentScores, WINNING_SCORE);
 }
 
 function playAgain () {
